@@ -1,5 +1,6 @@
 """Seed initial data — idempotent (checks before inserting)."""
 import sys
+import app.db.registry  # noqa — registers all models before any query runs
 from app.db.session import SessionLocal
 from app.core.security import hash_password
 

@@ -74,7 +74,7 @@ class VoiceCampaignTarget(Base):
     campaign_id = Column(UUID(as_uuid=True), ForeignKey("voice_campaigns.id", ondelete="CASCADE"), nullable=False)
     name = Column(String(255))
     phone = Column(String(50))
-    metadata = Column(JSON, default=dict)
+    extra_data = Column("metadata", JSON, default=dict)
 
     campaign = relationship("VoiceCampaign", back_populates="targets")
 

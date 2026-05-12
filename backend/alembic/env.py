@@ -12,7 +12,7 @@ if config.config_file_name is not None:
 database_url = os.getenv("DATABASE_URL", "postgresql://poc_user:poc_password@localhost:5432/poc_ictim")
 config.set_main_option("sqlalchemy.url", database_url)
 
-from app.db.base import Base  # noqa — registers all models
+from app.db.registry import Base  # noqa — registers all models
 target_metadata = Base.metadata
 
 

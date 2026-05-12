@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-echo "Running database migrations..."
-alembic upgrade head
+echo "Creating database tables..."
+python -m app.db.create_tables
 
 echo "Seeding initial data..."
 python -m app.db.seed

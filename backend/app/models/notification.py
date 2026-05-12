@@ -20,5 +20,5 @@ class Notification(Base):
     body = Column(Text)
     type = Column(String(50), default="info")  # info, warning, success, error
     is_read = Column(Boolean, default=False)
-    metadata = Column(JSON, default=dict)
+    extra_data = Column("metadata", JSON, default=dict)
     created_at = Column(DateTime(timezone=True), default=now_utc)
